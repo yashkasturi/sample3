@@ -38,7 +38,7 @@ def index():
 		  #return pathname1
 	return render_template('index.html')
 
-@app.route('/index', methods=['GET', 'POST','REQUEST'])
+@app.route('https://mangrove1.azurewebsites.net/index', methods=['GET', 'POST','REQUEST'])
 def index1():
 	if request.method == "REQUEST" or "POST":
 		cur = mysql.connection.cursor()
