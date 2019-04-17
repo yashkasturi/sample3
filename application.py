@@ -4,7 +4,7 @@ from PIL import Image
 import requests
 import imgsave
 import numpy
-import cv2
+#import cv2
 from skimage.measure import compare_ssim
 from skimage.io import imread
 import imutils
