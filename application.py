@@ -3,11 +3,6 @@ from flask_mysqldb import MySQL
 from PIL import Image
 import requests
 import imgsave
-import numpy
-from skimage.measure import compare_ssim
-from skimage.io import imread
-import imutils
-import sys
 
 app = Flask(__name__)
 
