@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 from PIL import Image
 import requests
+import imgsave
 
 app = Flask(__name__)
 
