@@ -5,6 +5,7 @@ from skimage.io import imread
 import imutils
 import sys
 
+def after1():
 	a=0
 	b=0
 	#def bf():
