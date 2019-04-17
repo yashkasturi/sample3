@@ -86,7 +86,7 @@ def page3():
 	imgsave.af(c,e)
 	return render_template('final1.html')
 
-@app.route('/final.html')
+@app.route('/final')
 def page4():
 	a=0
 	b=0
