@@ -2,10 +2,6 @@ from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 from PIL import Image
 import requests
-from skimage.measure import compare_ssim
-from skimage.io import imread
-import imutils
-import sys
 
 app = Flask(__name__)
 
@@ -59,7 +55,7 @@ def page3():
 		mysql.connection.commit()
 		result2=cur2.fetchone()
 		b=result2
-	#return render_template('final.html', a=b[0])
+	        #return render_template('final.html', a=b[0])
 		cur3 = mysql.connection.cursor()
 		cur3.execute("SELECT after_url from image WHERE pathname='{}'".format(result[0]))
 		mysql.connection.commit()
