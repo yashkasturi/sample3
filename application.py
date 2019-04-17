@@ -69,4 +69,9 @@ def page3():
 	imgsave.af(c,e)
 	return render_template('final1.html')
 
+@app.route('/final.html')
+def page4():
+	imgsave1.after1()
+	return render_template('final.html',d=a,e=b,f=c)
+
 
