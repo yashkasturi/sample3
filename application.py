@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 from PIL import Image
+import requests
+import imgsave
 
 app = Flask(__name__)
 
 @app.route('/')
-def css():
+def page1():
     return render_template('mangrove_Index.html')
 
 app.config['MYSQL_HOST'] = 'db4free.net'
@@ -16,7 +18,7 @@ app.config['MYSQL_DB'] = 'mangrove'
 mysql = MySQL(app)
 
 @app.route('/index.html', methods=['GET', 'POST'])
-def index():
+def page2():
 	if request.method == "POST":
 		  details = request.form
 		  pathname1 = details['pathname']
@@ -39,7 +41,7 @@ def index():
 	return render_template('index.html')
 
 @app.route('/index', methods=['GET', 'POST','REQUEST'])
-def index1():
+def page3():
 	if request.method == "REQUEST" or "POST":
 		cur = mysql.connection.cursor()
 		cur.execute("SELECT p_name from imginput WHERE id=1")
@@ -63,28 +65,5 @@ def index1():
 	#return render_template('final.html', a=b[0])
 	c=b[0]
 	e=d[0]
-	return af(c,e)
-def af(c,e):
-	url = c
-	try:
-		resp = requests.get(url, stream=True).raw
-	except requests.exceptions.RequestException as e:  
-		sys.exit(1)
-	try:
-		img = Image.open(resp)
-	except IOError:
-		print("Unable to open image")
-		sys.exit(1)
-	img.save('static/images/after.jpg', 'jpeg')
-	url = e
-	try:
-		resp = requests.get(url, stream=True).raw
-	except requests.exceptions.RequestException as e:  
-		sys.exit(1)
-	try:
-		img = Image.open(resp)
-	except IOError:
-		print("Unable to open image")
-		sys.exit(1)
-	img.save('static/images/before.jpg', 'jpeg')
+	imgsave.af(c,e)
 	return render_template('final1.html')
