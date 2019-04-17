@@ -2,9 +2,7 @@ from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 from PIL import Image
 import requests
-import imgsave
-import numpy
-#import cv2
+
 from skimage.measure import compare_ssim
 from skimage.io import imread
 import imutils
