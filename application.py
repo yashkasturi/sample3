@@ -3,7 +3,6 @@ from flask_mysqldb import MySQL
 from PIL import Image
 import requests
 import imgsave
-import imgsave1
 
 app = Flask(__name__)
 
